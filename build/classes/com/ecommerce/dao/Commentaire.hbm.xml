@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 1, 2022, 6:01:03 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="commerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ecommerce.dao.Commentaire" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="commentaire">
+        <id name="idComm" type="int">
+            <column name="idComm"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.ecommerce.dao.Produit" embed-xml="true" fetch="select" insert="true" name="produit" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idP"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="idcmd" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="idcmd"/>
+        </property>
+        <property generated="never" lazy="false" name="commentaire" optimistic-lock="true" type="string" unique="false">
+            <column name="commentaire"/>
+        </property>
+        <property generated="never" lazy="false" name="datePub" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date_pub"/>
+        </property>
+    </class>
+</hibernate-mapping>

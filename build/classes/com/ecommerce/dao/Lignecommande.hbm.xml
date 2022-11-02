@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 1, 2022, 6:01:03 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="commerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ecommerce.dao.Lignecommande" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="lignecommande">
+        <id name="idlc" type="int">
+            <column name="idlc"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="idcmd" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="idcmd"/>
+        </property>
+        <property generated="never" lazy="false" name="idp" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="idp"/>
+        </property>
+        <property generated="never" lazy="false" name="qte" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="qte"/>
+        </property>
+        <property generated="never" lazy="false" name="prixAchat" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="prix_achat"/>
+        </property>
+    </class>
+</hibernate-mapping>

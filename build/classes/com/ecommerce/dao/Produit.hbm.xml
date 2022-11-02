@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 1, 2022, 6:01:03 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="commerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ecommerce.dao.Produit" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="produit">
+        <id name="idP" type="int">
+            <column name="idP"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.ecommerce.dao.Categorie" embed-xml="true" fetch="select" insert="true" name="categorie" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idcat"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="libelle" optimistic-lock="true" type="string" unique="false">
+            <column name="libelle"/>
+        </property>
+        <property generated="never" lazy="false" name="marque" optimistic-lock="true" type="string" unique="false">
+            <column name="Marque"/>
+        </property>
+        <property generated="never" lazy="false" name="prix" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="prix"/>
+        </property>
+        <property generated="never" lazy="false" name="description" optimistic-lock="true" type="string" unique="false">
+            <column length="1255" name="Description"/>
+        </property>
+        <property generated="never" lazy="false" name="fraisExpedition" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="fraisExpedition"/>
+        </property>
+        <property generated="never" lazy="false" name="disponibilite" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="disponibilite"/>
+        </property>
+        <property generated="never" lazy="false" name="qtestck" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="qtestck"/>
+        </property>
+        <property generated="never" lazy="false" name="datePub" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date_pub"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="wishlists" optimistic-lock="true" sort="unsorted" table="itemwishlist">
+            <key on-delete="noaction">
+                <column name="idp" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="com.ecommerce.dao.Wishlist" not-found="exception" unique="false">
+                <column name="idw" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="commentaires" optimistic-lock="true" sort="unsorted" table="commentaire">
+            <key on-delete="noaction">
+                <column name="idP"/>
+            </key>
+            <one-to-many class="com.ecommerce.dao.Commentaire" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

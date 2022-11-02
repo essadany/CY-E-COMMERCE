@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 1, 2022, 6:01:03 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="commerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ecommerce.dao.Client" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="client">
+        <id name="idc" type="int">
+            <column name="idc"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.ecommerce.dao.Compte" embed-xml="true" fetch="select" insert="true" name="compte" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="login"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nom" optimistic-lock="true" type="string" unique="false">
+            <column name="nom"/>
+        </property>
+        <property generated="never" lazy="false" name="prenom" optimistic-lock="true" type="string" unique="false">
+            <column name="prenom"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="email"/>
+        </property>
+        <property generated="never" lazy="false" name="tel" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="tel"/>
+        </property>
+        <property generated="never" lazy="false" name="regDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="regDate"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="wishlists" optimistic-lock="true" sort="unsorted" table="wishlist">
+            <key on-delete="noaction">
+                <column name="idc"/>
+            </key>
+            <one-to-many class="com.ecommerce.dao.Wishlist" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="commandes" optimistic-lock="true" sort="unsorted" table="commande">
+            <key on-delete="noaction">
+                <column name="idc"/>
+            </key>
+            <one-to-many class="com.ecommerce.dao.Commande" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

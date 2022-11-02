@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 1, 2022, 6:01:03 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="commerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ecommerce.dao.Image" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="image">
+        <id name="idimg" type="int">
+            <column name="idimg"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="url" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="url"/>
+        </property>
+        <property generated="never" lazy="false" name="isprincipal" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="isprincipal"/>
+        </property>
+        <property generated="never" lazy="false" name="idp" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="idp"/>
+        </property>
+    </class>
+</hibernate-mapping>

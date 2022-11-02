@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="commerce" match-name=".*"/>
+  <table-filter match-catalog="commerce" match-name="adresse"/>
+  <table-filter match-catalog="commerce" match-name="categorie"/>
+  <table-filter match-catalog="commerce" match-name="client"/>
+  <table-filter match-catalog="commerce" match-name="commande"/>
+  <table-filter match-catalog="commerce" match-name="commentaire"/>
+  <table-filter match-catalog="commerce" match-name="compte"/>
+  <table-filter match-catalog="commerce" match-name="image"/>
+  <table-filter match-catalog="commerce" match-name="itemwishlist"/>
+  <table-filter match-catalog="commerce" match-name="lignecommande"/>
+  <table-filter match-catalog="commerce" match-name="produit"/>
+  <table-filter match-catalog="commerce" match-name="wishlist"/>
+</hibernate-reverse-engineering>
